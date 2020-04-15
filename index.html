@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--Author: Pranav Rajpurkar 2016-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>The Chinese SQL Semantic Parsing Dataset</title>
+    <meta name="description" content="CSpider is a Chinese large-scale complex and cross-domain semantic parsing and text-to-SQL dataset translated from Spider by 2 NLP researchers and 1 computer science student. The goal of the CSpider challenge is to develop natural language interfaces to cross-domain databases for Chinese, which is currently a low-resource language in this task area.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta property="og:image" content="/logo.png">
+    <link rel="image_src" type="image/png" href="/CSpider-explorer/logo.png">
+    <link rel="shortcut icon" href="/CSpider-explorer/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/CSpider-exPLORer/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/CSpider-explorer/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/CSpider-explorer/stylesheets/layout.css">
+    <link rel="stylesheet" href="/CSpider-explorer/stylesheets/index.css">
+      <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149798051-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149798051-1');
+    </script>
+  </head>
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top" id="topNavbar" role="navigation">
+      <div class="container clearfix" id="navContainer">
+        <div class="leftNav">
+          <div class="brandDiv">
+            <a class="navbar-brand" href="/CSpider-explorer/">CSpider</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="cover" id="topCover">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 id="appTitle">CSpider
+              <b>1.0</b>
+            </h1>
+            <h2 id="appSubtitle">The Chinese Semantic Parsing and Text-to-SQL Challenge</h2></div>
+        </div>
+      </div>
+    </div>
+    <div class="cover" id="contentCover">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="infoCard">
+              <div class="infoBody">
+                <div class="infoHeadline">
+                  <h2>What is CSpider?</h2></div>
+                <p>
+                  CSpider is a Chinese large-scale complex and cross-domain semantic parsing and text-to-SQL dataset translated from
+                  <a href="https://yale-lily.github.io/spider">Spider</a>
+                  by 2 NLP researchers and 1 computer science student. The goal of the CSpider challenge is to develop natural language interfaces to cross-domain databases for Chinese, which is currently a low-resource language in this task area. It consists of 10,181 questions and 5,693 unique complex SQL queries on 200 databases with multiple tables covering 138 different domains. Following Spider 1.0, in CSpider, different complex SQL queries and databases appear in train and test sets. To do well on it, systems must generalize well to not only new SQL queries but also new database schemas. </p>
+                <hr>
+                <p>
+                  CSipder is translated from Spider. However, there can be added challenges. First, structures of relational databases, in particular names and column names of DB tables, are typically represented in English. This adds to the challenges to question-to-DB mapping. Second, the basic semantic unit for denoting columns or cells can be words, but word segmentation can be erroneous. It is also interesting to study the influence of other linguistic characteristics of Chinese, such as zero-pronoun, on its SQL parsing.</p>
+                <a class="btn actionBtn" href="https://arxiv.org/abs/1909.13293">CSpider Paper (EMNLP'19)</a>
+                <hr>
+                <div class="infoHeadline">
+                  <h2>Getting Started</h2></div>
+                <p>The data is split into training, development, and unreleased test sets. Download a copy of the dataset (distributed under the
+                  <a href="http://creativecommons.org/licenses/by-sa/4.0/legalcode">CC BY-SA 4.0</a> license):
+                  <ul class="list-unstyled">
+                    <li>
+                      <a class="btn actionBtn inverseBtn" href="https://drive.google.com/drive/folders/1TxCUq1ydPuBdDdHF3MkHT-8zixluQuLa?usp=sharing" download>CSpider Dataset (Google Drive)</a></li>
+                      <a class="btn actionBtn inverseBtn" href="https://pan.baidu.com/s/1Dxj38wRbbTOe0t3mQ3qhMg" download>CSpider Dataset (BaiduNetDisk)</a></li>
+                  </ul>
+                </p>
+                <p>Details of baseline models and evaluation script can be found on the following GitHub site:
+                  <ul class="list-unstyled">
+                    <li>
+                      <a class="btn actionBtn inverseBtn" href="https://github.com/taolusi/chisp" download>CSpider Github Page</a></li>
+                  </ul>
+                </p>
+                <p>Once you have a built a model that works to your expectations on the dev set, you submit it to get official scores on the dev and a hidden test set. To preserve the integrity of test results, we do not release the test set to the public. Instead, we require you to submit your model so that we can run it on the test set for you. Here's a tutorial walking you through official evaluation of your model:</p>
+                <a class="btn actionBtn inverseBtn" href="https://worksheets.codalab.org/worksheets/0xd2d37ae7db5b40d09aa52850ed34ee1e">Submission Tutorial</a>
+                <div class="infoHeadline">
+                  <h2>Data Examples</h2>
+                </div>
+                <p>Some examples look like the following:</p>
+                <img src="CSpider_examples.png" alt="test image" width="390" height="864">
+                <div class="infoHeadline">
+                  <h2>Have Questions?</h2></div>
+                <p>Ask us questions at our
+                  <a href="https://github.com/taolusi/chisp/issues">Github issues page</a> or contact
+                  <a href="mailto:minqingkai@westlake.edu.cn">minqingkai@westlake.edu.cn</a> or
+                  <a href="mailto:shiyuefeng@westlake.edu.cn">shiyuefeng@westlake.edu.cn</a>.</p>
+                <p>We expect the dataset to evolve. We would greatly appreciate it if you could donate us your non-private databases or SQL queries for the project. </p>
+                <div class="infoHeadline">
+                  <h2>Acknowledgement</h2></div>
+                <p>We thank
+                  <a href="https://taoyds.github.io/">Tao Yu</a>
+                  for sharing the original Spider test set with us, and the anonymous reviewers for their precious comments on this project. Also, we thank
+                  <a href="https://rajpurkar.github.io/">Pranav Rajpurkar</a>
+                  and Tao Yu for giving us the permission to build this website based on SQuAD and Spider. </p></div>
+                <div class="infoSubheadline">
+                  <!-- Place this tag where you want the button to render. -->
+                  <a class="github-button" href="https://github.com/taolusi/chisp" data-icon="octicon-star" data-show-count="true" aria-label="Star taolusi/chisp on GitHub">Star</a></div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="infoCard">
+              <div class="infoBody">
+                <div class="infoHeadline">
+                  <h2>Leaderboard - Exact Set Match without Values</h2></div>
+                <p>Following Spider, we take exact matching evaluation. Instead of simply conducting string comparison between the predicted and gold SQL queries, we decompose each SQL into several clauses, and conduct set comparison in each SQL clause. Please refer to
+                  <a href="https://github.com/taolusi/chisp/issues">our Github page</a> or
+                  <a href="https://arxiv.org/abs/1809.08887">the Spider paper</a> and
+                  <a href="https://github.com/taoyds/spider/tree/master/evaluation_examples">its Github page</a> for more details.</p>
+                <table class="table performanceTable">
+                  <tr>
+                    <th>Rank</th>
+                    <th>Model</th>
+                    <th>Dev</th>
+                    <th>Test</th></tr>
+                  <tr>
+                    <td>
+                      <p>1</p>
+                      <span class="date label label-default">Nov 28, 2019</span></td>
+                    <td style="word-break:break-word;">CN-SQL
+                      <p class="institution">oneconnect</p>
+                    <td>
+                      <b>22.9</b>
+                    </td>
+                    <td>
+                      <b>18.8</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>2</p>
+                      <span class="date label label-default">Sep 18, 2019</span></td>
+                    <td style="word-break:break-word;">SyntaxSQLNet (based on
+                      <a href="https://arxiv.org/abs/1810.05237">Yu et al. (2018a)</a>)
+                      <p class="institution">Westlake University</p>
+                      <a class="link" href="https://arxiv.org/abs/1909.13293">https://arxiv.org/abs/1909.13293</a></td>
+                    <td>
+                      <b>16.4</b>
+                    </td>
+                    <td>
+                      <b>13.3</b>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-default navbar-static-bottom footer">
+      <div class="container clearfix">
+        <div class="rightNav">
+          <div>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="/CSpider-explorer/">CSpider</a></li>
+              <li>
+                <a href="https://nlp.westlake.edu.cn">Westlake NLP Group</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <script src="/CSpider-explorer/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/CSpider-explorer/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+
+</html>
